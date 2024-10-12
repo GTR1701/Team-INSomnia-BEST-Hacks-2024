@@ -19,12 +19,28 @@ const buttonVariants = cva(
           "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
+        accept:"bg-purple-700 hover:bg-purple-800 transition hover:scale-125 text-black font-bold py-2 px-4 rounded",
+        cancel:"bg-rose-600 hover:bg-rose-800 transition hover:scale-125 text-black font-bold py-2 px-4 rounded",
+        send:"bg-sky-600 hover:bg-sky-700 transition hover:scale-125 text-black font-bold py-2 px-4 rounded",
+        singIn:"bg-purple-700 hover:bg-slate-800 transition hover:scale-125 text-white font-bold py-2 px-4 rounded",
+        logIn:"bg-slate-200 hover:bg-slate-300 transition hover:scale-125 text-black font-bold py-2 px-4 rounded",
+        goTo:"bg-purple-800 hover:bg-purple-600 transition hover:scale-125 text-black font-bold py-2 px-4 rounded",
+
+
       },
       size: {
         default: "h-9 px-4 py-2",
         sm: "h-8 rounded-md px-3 text-xs",
         lg: "h-10 rounded-md px-8",
         icon: "h-9 w-9",
+        accept: "h-10 w-24",
+        cancel:"h-10 w-24",
+        send:"h-10 w-24",
+        singIn:"h-10 w-24",
+        logIn:"h-10 w-24",
+        goTo:"h-10 w-24",
+
+      
       },
     },
     defaultVariants: {
