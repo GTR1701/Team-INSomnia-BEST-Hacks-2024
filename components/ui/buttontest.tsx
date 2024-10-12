@@ -1,0 +1,1 @@
+// do zrobienia =accepte =cancel = go to =sendn = log in = sign in = 
