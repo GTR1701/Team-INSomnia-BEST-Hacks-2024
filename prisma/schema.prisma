@@ -14,9 +14,68 @@ datasource db {
 }
 
 model User {
-  id        String   @id @default(cuid())
-  username     String   @unique
-  password      String?
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id         String @id @default(cuid())
+  username   String @unique
+  password   String
+  userType   String 
+  experience Int @default(0)
+  currency   Int @default(0)
+}
+
+model UserTypes {
+  id   String @id @default(cuid())
+  type String
+}
+
+model UserCourses {
+  id       String @id @default(cuid())
+  userId   String
+  courseId String
+}
+
+model UserActiveLesson {
+  id       String @id @default(cuid())
+  userId   String
+  lessonId String
+}
+
+model Course {
+  id                 String           @id @default(cuid())
+  title              String
+  description        String
+  price              Int              @default(0)
+  lessons            Int              @default(0)
+  level              CourseLevels     @relation(fields: [courseLevelsId], references: [id])
+  image              String?
+  category           CourseCategories @relation(fields: [courseCategoriesId], references: [id])
+  rating             Float
+  courseCategoriesId String
+  courseLevelsId     String
+  Lessons            Lesson[]
+}
+
+model CourseCategories {
+  id       String   @id @default(cuid())
+  category String
+  Course   Course[]
+}
+
+model CourseLevels {
+  id     String   @id @default(cuid())
+  level  String
+  Course Course[]
+}
+
+model Lesson {
+  id                 String @id @default(cuid())
+  lessonName         String
+  course             Course @relation(fields: [courseId], references: [id])
+  route              String
+  description        String
+  codeEditorDefault  String @default("console.log('Hello World')")
+  codeEditorSolution String @default("console.log('Hello World')")
+  nextLesson         String
+  previousLesson     String
+  reward             Int
+  courseId           String
 }
