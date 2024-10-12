@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function Home() {
   return (
     <>
-      <Button variant="nav" className="transition">
+      <Button className="transition">
         Shadcn Button
       </Button>
     </>
