@@ -20,25 +20,25 @@ export const RegisterSchema = z.object({
     }
 })
 
-export const FetchExpensesFormSchema = z.object({
-    name: z.string(),
-    type: z.string(),
-    date: z.object({
-        from: z.date(),
-        to: z.date()
-    }, { message: 'Podaj przedział dat' })
+export const AddCourseSchema = z.object({
+    title: z.string().min(1, { message: 'Podaj Tytuł' }),
+    description: z.string().min(1, { message: 'Podaj Opis' }),
+    price: z.string().min(1, { message: 'Podaj Cenę' }),
+    lessons: z.number().min(1, { message: 'Podaj Liczbę Lekcji' }),
+    level: z.string().min(1, { message: 'Podaj Poziom Zaawansowania' }),
+    image: z.string().min(1, { message: 'Podaj Link do Obrazu' }),
+    category: z.string().min(1, { message: 'Podaj Kategorię' }),
+    rating: z.number().min(1, { message: 'Podaj Ocenę' }),
 })
 
-export const TransactionDataTableSchema = z.object({
-    id: z.number(),
-    name: z.string(),
-    type: z.string(),
-    amount: z.number(),
-    date: z.date()
-})
-
-export const AddExpenseFormSchema = z.object({
-    name: z.string().min(1, { message: 'Wymagany tytuł transakcji' }),
-    type: z.string().min(1, { message: 'Wymagany typ transakcji' }),
-    amount: z.number().min(0.01, { message: 'Wymagana kwota transakcji' }),
+export const AddLessonSchema = z.object({
+    lessonName: z.string().min(1, { message: 'Podaj Nazwę Lekcji' }),
+    course: z.string().min(1, { message: 'Wybierz Kurs' }),
+    route: z.string().min(1, { message: 'Podaj Ścieżkę' }),
+    description: z.string().min(1, { message: 'Podaj Opis' }),
+    codeEditorDefault: z.string().min(1, { message: 'Podaj Domyślny Kod' }),
+    codeEditorSolution: z.string().min(1, { message: 'Podaj Rozwiązanie' }),
+    nextLesson: z.string().min(1, { message: 'Podaj Następną Lekcję' }),
+    previousLesson: z.string().min(1, { message: 'Podaj Poprzednią Lekcję' }),
+    reward: z.number().min(1, { message: 'Podaj Nagrodę w Postaci Ilości Punktów' }),
 })

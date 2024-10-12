@@ -45,7 +45,7 @@ export default function RegisterForm({userTypes}: Readonly<Props>) {
 		if (registerStatus.message === 'Logged in') {
 			updateUser(registerStatus.uuid)
 			setCookie('currentUser', registerStatus.uuid)
-			router.push('/dashboard')
+			router.push('/login')
 		}
 	};
 
