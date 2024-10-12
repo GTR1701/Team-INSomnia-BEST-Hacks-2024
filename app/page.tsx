@@ -3,10 +3,10 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <>
-      <Button className="transition">
-        Shadcn Button
-      </Button>
-    </>
+    <html>
+      <body>
+        <h1 className="">Witaj przyszly programisto</h1>
+      </body>
+    </html>
   )
 }

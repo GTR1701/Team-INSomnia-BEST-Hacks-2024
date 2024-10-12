@@ -24,12 +24,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
+    <html>
+      <body className="bg-neutral-800">
+    <nav className="bg-purple-700 p-4">
+      <div className="container mx-auto flex justify-between items-center">
+        <h1 className="text-3xl font-bold">CodeWise</h1>
+        <ul className="flex space-x-6">
+          <li><a href="#" className="text-white hover:text-purple-300">Home</a></li>
+          <li><a href="#" className="text-white hover:text-purple-300">Courses</a></li>
+          <li><a href="#" className="text-white hover:text-purple-300">Leaderboard</a></li>
+          <li><a href="#" className="text-white hover:text-purple-300">Community</a></li>
+        </ul>
+        <button className="bg-white text-black px-4 py-2 rounded-lg hover:bg-purple-500">Login</button>
+      </div>
+    </nav>
+    {children}
+    </body>
     </html>
   );
 }
