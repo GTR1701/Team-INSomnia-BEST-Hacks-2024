@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import Link from "next/link";
+import { FacebookIcon, HouseIcon, MailIcon, PhoneCallIcon } from "lucide-react";
+import { InstagramLogoIcon } from "@radix-ui/react-icons";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -24,11 +27,41 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-neutral-800`}
-      >
+    <html>
+      <body className="bg-neutral-800 min-h-screen overflow-x-hidden">
+        <nav className="bg-purple-700 p-4 sticky top-0 z-20">
+          <div className="container mx-auto flex justify-between items-center">
+            <h1 className="text-3xl font-bold">CodeWise</h1>
+            <ul className="flex space-x-10">
+              <li><Link href="#" className="text-white hover:text-purple-300">Home</Link></li>
+              <li><Link href="#" className="text-white hover:text-purple-300">Courses</Link></li>
+              <li><Link href="#" className="text-white hover:text-purple-300">Leaderboard</Link></li>
+              <li><Link href="#" className="text-white hover:text-purple-300">Community</Link></li>
+            </ul>
+            <button className="bg-white text-black px-4 py-2 rounded-lg hover:bg-purple-500">Login</button>
+          </div>
+        </nav>
+        <div className="flex justify-center">
         {children}
+        </div>
+        
+        {/* Stopka */}
+        <footer className="bg-neutral-900 text-white pt-2 bottom-0 w-screen">
+          <div className="container mx-auto flex flex-col">
+           
+            <h2 className="text-xl font-bold mb-4 text-center">Kontakt</h2>
+              <div className="flex justify-around">
+                <p className="text-sm hover:text-purple-500 transition hover:scale-125"><MailIcon className="mx-auto hover:text-purple-"/> support@codewise.com</p>
+                <p className="text-sm hover:text-purple-500 transition hover:scale-125"><PhoneCallIcon className="mx-auto"/> +48 123 456 789</p>
+                <p className="text-sm hover:text-purple-500 transition hover:scale-125"><HouseIcon className="mx-auto"/> Warszawa, Polska</p>
+                <p className="text-sm hover:text-purple-500 transition hover:scale-125"><FacebookIcon className="mx-auto"/> CodeWise</p>
+                <p className="text-sm hover:text-purple-500 transition hover:scale-125"><InstagramLogoIcon className="mx-auto"/> CodeWise</p>
+              </div>
+          </div>
+          <div className="mt-8 text-center text-sm border-t border-neutral-700 pt-4">
+            <p>&copy; {new Date().getFullYear()} CodeWise. Wszelkie prawa zastrzeżone.</p>
+          </div>
+        </footer>
       </body>
     </html>
   );
