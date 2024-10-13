@@ -34,6 +34,7 @@ export default function LoginForm() {
 		if (loginStatus.message === 'Logged in') {
 			updateUser(loginStatus.uuid)
 			setCookie('currentUser', {'uuid': loginStatus.uuid, 'userType': loginStatus.userType})
+			updateUser(loginStatus.uuid)
 			router.push('/courses')
 		}
 	};

@@ -2,10 +2,11 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Link from "next/link";
-import Image from "next/image"
+import Image from "next/image";
 import { FacebookIcon, HouseIcon, MailIcon, PhoneCallIcon } from "lucide-react";
 import { InstagramLogoIcon } from "@radix-ui/react-icons";
 import { Button } from "@/components/ui/button";
+import Navbar from "@/components/Navbar";
 
 const geistSans = localFont({
 	src: "./fonts/GeistVF.woff",
@@ -31,55 +32,7 @@ export default function RootLayout({
 	return (
 		<html>
 			<body className="bg-neutral-800 min-h-screen overflow-x-hidden">
-				<nav className="bg-purple-700 p-4 sticky top-0 z-20">
-					<div className="container mx-auto flex justify-between items-center">
-						<div className="flex">
-							<h1 className="text-3xl font-bold">CodeWise</h1>
-							<Image className="w-20 h-20 " src="/logobn.png" alt="" width={500} height={500}/>
-						</div>
-						
-						<ul className="flex space-x-10">
-							<li>
-								<Link
-									href="#"
-									className="text-white hover:text-purple-300"
-								>
-									Home
-								</Link>
-							</li>
-							<li>
-								<Link
-									href="#"
-									className="text-white hover:text-purple-300"
-								>
-									Courses
-								</Link>
-							</li>
-							<li>
-								<Link
-									href="#"
-									className="text-white hover:text-purple-300"
-								>
-									Leaderboard
-								</Link>
-							</li>
-							<li>
-								<Link
-									href="#"
-									className="text-white hover:text-purple-300"
-								>
-									Community
-								</Link>
-							</li>
-						</ul>
-						<Button
-							className="bg-white text-black px-4 py-2 rounded-lg hover:bg-purple-500"
-							asChild
-						>
-							<Link href="/auth/login">Login</Link>
-						</Button>
-					</div>
-				</nav>
+				<Navbar />
 				<div className="flex justify-center">{children}</div>
 
 				{/* Stopka */}
