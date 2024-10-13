@@ -13,7 +13,8 @@ export async function loginUser(credentials: z.infer<typeof LoginSchema>) {
         },
         select: {
             password: true,
-            id: true
+            id: true,
+            userType: true
         }
     })
     
@@ -27,5 +28,5 @@ export async function loginUser(credentials: z.infer<typeof LoginSchema>) {
         return {message: 'Invalid password'}
     }
 
-    return {message: 'Logged in', uuid: passwordDb.id}
+    return {message: 'Logged in', uuid: passwordDb.id, userType: passwordDb.userType}
 }

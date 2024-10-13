@@ -40,15 +40,15 @@ export default function RegisterForm({ userTypes }: Readonly<Props>) {
   const [registerResponse, setRegisterResponse] = useState("");
   const [open, setOpen] = useState(false);
 
-  const onSubmit = async (data: z.infer<typeof RegisterSchema>) => {
-    const registerStatus = await registerUser(data);
-    setRegisterResponse(registerStatus.message);
-    if (registerStatus.message === "Logged in") {
-      updateUser(registerStatus.uuid);
-      setCookie("currentUser", registerStatus.uuid);
-      router.push("/dashboard");
-    }
-  };
+	const onSubmit = async (data: z.infer<typeof RegisterSchema>) => {
+		const registerStatus = await registerUser(data)
+		setRegisterResponse(registerStatus.message)
+		if (registerStatus.message === 'Logged in') {
+			updateUser(registerStatus.uuid)
+			setCookie('currentUser', registerStatus.uuid)
+			router.push('/login')
+		}
+	};
 
   return (
     <Form {...form}>
