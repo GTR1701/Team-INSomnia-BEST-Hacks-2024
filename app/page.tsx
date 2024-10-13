@@ -1,6 +1,6 @@
 "use client"
 import { Button } from "@/components/ui/button";
-import { Container } from "postcss";
+import Link from "next/link";
 import { useState } from "react";
 
 export default function Home() {
@@ -46,8 +46,8 @@ export default function Home() {
             <h2 className="text-slate-100 font-medium text-3xl text-center my-20">
                   Pierwszy raz na stronie?
             </h2>
-            <Button>
-              załóż konto już teraz
+            <Button asChild>
+              <Link href="/auth/register">Załóż konto już teraz</Link>
             </Button>
           </div>
           <div>

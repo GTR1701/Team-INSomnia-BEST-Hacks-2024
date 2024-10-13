@@ -64,7 +64,7 @@ export default function AddLesson({courses}: Readonly<Props>) {
             <form
                 onSubmit={form.handleSubmit(onSubmit)}
                 method="post"
-                className="space-y-8 mt-16"
+                className="space-y-8 mt-16 text-white"
             >
                 <FormField
                     control={form.control}

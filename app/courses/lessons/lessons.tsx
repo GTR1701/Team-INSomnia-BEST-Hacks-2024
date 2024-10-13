@@ -3,6 +3,7 @@
 import { getCookie } from "cookies-next";
 import { useState } from "react";
 import { Button } from "@/components/ui/button"; // Przykładowy komponent z shadcn/ui
+import CodeEditorLesson from "@/components/codeEditor/CodeEditorLesson";
 
 export default function Lessons() {
   const currentUser = getCookie('currentUser');
@@ -26,15 +27,7 @@ export default function Lessons() {
 
       {/* Prawa kolumna */}
       <div className="w-9/10 ml-[20%] bg-white p-4 overflow-y-auto h-full">
-        <h2 className="text-lg font-bold mb-4">Right Column</h2>
-        <p className="text-gray-600">You selected: {selected}</p>
-        {/* Dodatkowa treść, która będzie przewijalna */}
-        <div className="mt-4">
-          <p>Here you can add more content that would make the page scrollable.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque non massa nulla. Integer vestibulum vehicula dapibus.</p>
-          <p>Vivamus gravida nibh a dui convallis, at tempor felis hendrerit.</p>
-          {/* Można dodać więcej treści */}
-        </div>
+        <CodeEditorLesson description={""} codeEditorDefault={""} codeEditorSolution={""} nextLesson={""} previousLesson={""} />
       </div>
     </div>
   );

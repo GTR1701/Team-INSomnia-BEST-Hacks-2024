@@ -26,3 +26,7 @@ export async function createLesson(data: z.infer<typeof AddLessonSchema>) {
 
     return { success: true }
 }
+
+export async function getCourses() {
+    return await prisma.course.findMany()
+}
